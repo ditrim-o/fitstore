@@ -708,7 +708,7 @@ ul {
 .main-banner {
   width: 1700px;
   max-width: 100%;
-  background-image: url(img/main-banner.jpg);
+  background-image: url(../img/main-banner.jpg);
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto;
@@ -741,7 +741,7 @@ ul {
 
 .main-banner__link:before {
   content: "";
-  background-image: url(img/sprites/sprite.svg#arrow_down);
+  background-image: url(../img/sprites/sprite.svg#arrow_down);
   height: 46px;
   width: 30px;
   position: absolute;
