@@ -449,7 +449,7 @@ ul {
 .dropdown__header::after {
   content: "";
   position: absolute;
-  background-image: url(img/sprites/sprite.svg#arrow_right-menu);
+  background-image: url(../img/sprites/sprite.svg#arrow_right-menu);
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
@@ -468,7 +468,7 @@ ul {
 .dropdown__banner {
   width: 320px;
   height: 380px;
-  background-image: url(img/menu-img.jpg);
+  background-image: url(../img/menu-img.jpg);
   margin-left: auto;
   position: relative;
 }
@@ -583,7 +583,7 @@ ul {
 
 .footer__menu-link_offer::after {
   content: "";
-  background-image: url(img/sprites/sprite.svg#tag_fill);
+  background-image: url(../img/sprites/sprite.svg#tag_fill);
   width: 11px;
   height: 11px;
   margin-left: 8px;
