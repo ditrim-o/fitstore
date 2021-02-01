@@ -710,7 +710,7 @@ ul {
   max-width: 100%;
   background-image: url(../img/main-banner.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right center;
   margin: 0 auto;
   background-size: cover;
 }
@@ -1647,6 +1647,103 @@ body {
 
   .discount__content {
     max-width: 511px;
+  }
+}
+
+@media (max-width: 660px) {
+  .main-banner__container {
+    padding-top: 63px;
+    padding-bottom: 55px;
+  }
+
+  .main-banner__header {
+    max-width: 322px;
+    line-height: 30px;
+    font-size: 30px;
+    margin-bottom: 42px;
+  }
+
+  .main-banner__text {
+    max-width: 213px;
+    line-height: 20px;
+  }
+
+  .main-banner__link {
+    margin-top: 162px;
+  }
+
+  .main-catalog__container {
+    padding-top: 16px;
+  }
+
+  .main-catalog__list-item {
+    width: 300px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+  }
+
+  .main-catalog__item-img {
+    width: 100%;
+  }
+
+  .main-specials {
+    padding-top: 53px;
+    padding-bottom: 42px;
+  }
+
+  .main-specials__h1 {
+    font-size: 20px;
+    margin-bottom: 23px;
+  }
+
+  .main-specials__list {
+    max-width: 300px;
+  }
+
+  .main-specials__item {
+    margin-bottom: 16px;
+  }
+
+  .brands__item img {
+    max-height: 49px;
+    max-width: 144px;
+  }
+
+  .brands {
+    padding-top: 107px;
+  }
+
+  .brands__list {
+    max-width: 300px;
+  }
+
+  .why {
+    padding-top: 58px;
+    padding-bottom: 49px;
+  }
+
+  .why__text {
+    max-width: 300px;
+  }
+
+  .why__item-text {
+    font-size: 16px;
+    margin-left: 17px;
+  }
+
+  .why__item-img {
+    max-width: 52px;
+    max-height: 50px;
+  }
+
+  .why__header {
+    margin-bottom: 34px;
+  }
+
+  .why__item {
+    margin-bottom: 22px;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
