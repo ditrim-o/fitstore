@@ -1,6 +1,66 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/
+/******/ 		return result;
+/******/ 	}
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"main": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -79,9 +139,18 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
 /******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push(["./src/js/index.js","vendor"]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -135,8 +204,99 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
+/* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nouislider__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+
+
+/**/
+
+!function (e) {
+  "function" == typeof define && __webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js") ? define([], e) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? module.exports = e() : window.wNumb = e();
+}(function () {
+  "use strict";
+
+  var o = ["decimals", "thousand", "mark", "prefix", "suffix", "encoder", "decoder", "negativeBefore", "negative", "edit", "undo"];
+
+  function w(e) {
+    return e.split("").reverse().join("");
+  }
+
+  function h(e, t) {
+    return e.substring(0, t.length) === t;
+  }
+
+  function f(e, t, n) {
+    if ((e[t] || e[n]) && e[t] === e[n]) throw new Error(t);
+  }
+
+  function x(e) {
+    return "number" == typeof e && isFinite(e);
+  }
+
+  function n(e, t, n, r, i, o, f, u, s, c, a, p) {
+    var d,
+        l,
+        h,
+        g = p,
+        v = "",
+        m = "";
+    return o && (p = o(p)), !!x(p) && (!1 !== e && 0 === parseFloat(p.toFixed(e)) && (p = 0), p < 0 && (d = !0, p = Math.abs(p)), !1 !== e && (p = function (e, t) {
+      return e = e.toString().split("e"), (+((e = (e = Math.round(+(e[0] + "e" + (e[1] ? +e[1] + t : t)))).toString().split("e"))[0] + "e" + (e[1] ? e[1] - t : -t))).toFixed(t);
+    }(p, e)), -1 !== (p = p.toString()).indexOf(".") ? (h = (l = p.split("."))[0], n && (v = n + l[1])) : h = p, t && (h = w((h = w(h).match(/.{1,3}/g)).join(w(t)))), d && u && (m += u), r && (m += r), d && s && (m += s), m += h, m += v, i && (m += i), c && (m = c(m, g)), m);
+  }
+
+  function r(e, t, n, r, i, o, f, u, s, c, a, p) {
+    var d,
+        l = "";
+    return a && (p = a(p)), !(!p || "string" != typeof p) && (u && h(p, u) && (p = p.replace(u, ""), d = !0), r && h(p, r) && (p = p.replace(r, "")), s && h(p, s) && (p = p.replace(s, ""), d = !0), i && function (e, t) {
+      return e.slice(-1 * t.length) === t;
+    }(p, i) && (p = p.slice(0, -1 * i.length)), t && (p = p.split(t).join("")), n && (p = p.replace(n, ".")), d && (l += "-"), "" !== (l = (l += p).replace(/[^0-9\.\-.]/g, "")) && (l = Number(l), f && (l = f(l)), !!x(l) && l));
+  }
+
+  function i(e, t, n) {
+    var r,
+        i = [];
+
+    for (r = 0; r < o.length; r += 1) {
+      i.push(e[o[r]]);
+    }
+
+    return i.push(n), t.apply("", i);
+  }
+
+  return function e(t) {
+    if (!(this instanceof e)) return new e(t);
+    "object" == _typeof(t) && (t = function (e) {
+      var t,
+          n,
+          r,
+          i = {};
+
+      for (void 0 === e.suffix && (e.suffix = e.postfix), t = 0; t < o.length; t += 1) {
+        if (void 0 === (r = e[n = o[t]])) "negative" !== n || i.negativeBefore ? "mark" === n && "." !== i.thousand ? i[n] = "." : i[n] = !1 : i[n] = "-";else if ("decimals" === n) {
+          if (!(0 <= r && r < 8)) throw new Error(n);
+          i[n] = r;
+        } else if ("encoder" === n || "decoder" === n || "edit" === n || "undo" === n) {
+          if ("function" != typeof r) throw new Error(n);
+          i[n] = r;
+        } else {
+          if ("string" != typeof r) throw new Error(n);
+          i[n] = r;
+        }
+      }
+
+      return f(i, "mark", "thousand"), f(i, "prefix", "negative"), f(i, "prefix", "negativeBefore"), i;
+    }(t), this.to = function (e) {
+      return i(t, n, e);
+    }, this.from = function (e) {
+      return i(t, r, e);
+    });
+  };
+});
+/**/
 
 function menuMobUse() {
   var burger = document.querySelector('.header__burger');
@@ -195,26 +355,96 @@ function menuMobUse() {
       });
     }
   });
-  /*cat.forEach((item, i)=>{
-      item.addEventListener('click', function(){
-          if (nav.classList.contains('active')){
-              this.classList.add('active');
-                banner.classList.add('hide');
-              menuItem.forEach((item)=>{
-                  if (!item.classList.contains('header__menu-item_with-child')){
-                      item.classList.add('hide');
-                  }
-              });
-              console.log('active'); 
-          }
-          
-      });        
-  });*/
+}
+
+function rangeSettings() {
+  var inputMin = document.getElementById('range-input-min');
+  var inputMax = document.getElementById('range-input-max');
+
+  if (inputMin && inputMax) {
+    var min = parseInt(inputMin.value, 10);
+    var max = parseInt(inputMax.value, 10);
+    var handlesSlider = document.getElementById('range');
+    nouislider__WEBPACK_IMPORTED_MODULE_1___default.a.create(handlesSlider, {
+      start: [min, max],
+      connect: true,
+      range: {
+        'min': [min],
+        'max': [max]
+      },
+      format: wNumb({
+        decimals: 0,
+        thousand: ' ',
+        suffix: ' ₽'
+      })
+    });
+    handlesSlider.noUiSlider.on('update', function (values, handle) {
+      var value = values[handle];
+
+      if (handle) {
+        inputMax.value = value;
+      } else {
+        inputMin.value = value;
+      }
+    });
+    inputMin.addEventListener('change', function () {
+      handlesSlider.noUiSlider.set([this.value, null]);
+    });
+    inputMax.addEventListener('change', function () {
+      handlesSlider.noUiSlider.set([null, this.value]);
+    });
+  }
+}
+/*selects*/
+
+
+function selectShow() {
+  var container = document.querySelectorAll('.form-select');
+  var body = document.getElementsByTagName('body')[0];
+
+  if (container) {
+    container.forEach(function (item) {
+      var select = item.querySelector('.hidden-select');
+      var selectedText = item.querySelector('.form-select__selected');
+      var values = item.querySelectorAll('.form-select__option');
+      var list = item.querySelector('.form-select-list');
+      body.addEventListener('click', function (e) {
+        if (item != e.target.closest('.form-select')) {
+          list.classList.remove('active');
+          selectedText.classList.remove('active');
+        }
+      });
+      selectedText.addEventListener('click', function (e) {
+        showSelectList(this, list);
+      });
+      values.forEach(function (item, i) {
+        item.addEventListener('click', function () {
+          var text = this.innerHTML;
+          selectedText.innerHTML = text;
+          select.options[i].selected = true;
+          showSelectList(selectedText, list);
+        });
+      });
+    });
+  }
+}
+
+function showSelectList(span, list) {
+  if (!span.classList.contains('active')) {
+    list.classList.add('active');
+    span.classList.add('active');
+  } else {
+    list.classList.remove('active');
+    span.classList.remove('active');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   menuMobUse();
+  rangeSettings();
+  selectShow();
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
