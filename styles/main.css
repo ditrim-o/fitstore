@@ -792,6 +792,12 @@ ul {
   height: 300px;
   max-width: 100%;
   position: relative;
+  overflow: hidden;
+}
+
+.main-catalog__list-item:hover .main-catalog__item-img {
+  height: 110%;
+  width: 110%;
 }
 
 .main-catalog__item-btn {
@@ -804,6 +810,8 @@ ul {
 .main-catalog__item-img {
   object-fit: cover;
   height: 100%;
+  width: 100%;
+  transition: .3s;
 }
 
 .main-specials {
