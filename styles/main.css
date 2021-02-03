@@ -353,7 +353,7 @@ ul {
 }
 
 .header__icons-img:hover {
-  opacity: .3;
+  opacity: .7;
 }
 
 .header__icons-img.inst {
@@ -669,7 +669,7 @@ ul {
 }
 
 .footer__inst:hover {
-  opacity: .3;
+  opacity: .7;
 }
 
 .footer__policy {
