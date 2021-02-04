@@ -1479,6 +1479,7 @@ ul {
   max-height: 34px;
   object-fit: contain;
   margin-right: 16px;
+  fill: #21303D;
 }
 
 .filter__category-header {
