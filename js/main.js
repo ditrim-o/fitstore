@@ -308,6 +308,8 @@ function menuMobUse() {
   burger.addEventListener('click', function () {
     if (!nav.classList.contains('active')) {
       nav.classList.add('active');
+      scrollHide('hide');
+      burger.classList.add('active');
     } else {
       nav.classList.remove('active');
       banner.classList.remove('hide');
@@ -318,6 +320,8 @@ function menuMobUse() {
       menuItem.forEach(function (item) {
         item.classList.remove('hide');
       });
+      scrollHide('show');
+      burger.classList.remove('active');
     }
   });
   nav.addEventListener('click', function (event) {
@@ -436,6 +440,24 @@ function showSelectList(span, list) {
   } else {
     list.classList.remove('active');
     span.classList.remove('active');
+  }
+}
+/*scroll hide/show*/
+
+
+function scrollHide(inf) {
+  var html = document.getElementsByTagName('html')[0];
+  var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+  if (inf == 'hide') {
+    html.classList.add('noscroll');
+    html.style.paddingRight = scrollbarWidth + "px";
+  } else if (inf == 'show') {
+    html.classList.remove('noscroll');
+    html.style.paddingRight = 0;
+  } else {
+    html.classList.remove('noscroll');
+    html.style.paddingRight = 0;
   }
 }
 
