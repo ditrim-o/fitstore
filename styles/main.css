@@ -275,7 +275,7 @@ ul {
 }
 
 .bg_pink {
-  background-color: #e5b3af;
+  background-color: #e9b0b7;
 }
 
 .bg_violent {
@@ -287,7 +287,7 @@ ul {
 }
 
 .clr_pink {
-  color: #e5b3af;
+  color: #e9b0b7;
 }
 
 .clr_violent {
@@ -310,6 +310,10 @@ ul {
   font-size: 18px;
   font-weight: 700;
   line-height: 30px;
+}
+
+.main_bg-grey {
+  background-color: #f3f4f9;
 }
 
 .btn {
@@ -744,6 +748,9 @@ ul {
 
 .footer__adwin-img {
   margin-left: 22px;
+  height: 18px;
+  width: 62px;
+  fill: #aca8c3;
 }
 
 .footer__adwin:hover {
@@ -1249,7 +1256,7 @@ ul {
 }
 
 .radio:checked + label:before {
-  background: #e5b3af;
+  background: #e9b0b7;
 }
 
 .radio:checked + label:after {
@@ -1978,7 +1985,6 @@ ul {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 53px;
 }
 
 .subcat-banner__prev-img {
@@ -2193,6 +2199,106 @@ ul {
   margin-bottom: 59px;
 }
 
+.payment__container {
+  max-width: 1423px;
+  padding-top: 65px;
+  padding-bottom: 96px;
+}
+
+.payment__content {
+  justify-content: space-between;
+}
+
+.payment__banner {
+  margin-top: 7px;
+  height: 446px;
+  width: 320px;
+  position: relative;
+}
+
+.payment__banner:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba(33, 48, 61, 0.8), rgba(33, 48, 61, 0.8));
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+}
+
+.payment__banner-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.payment__banner-sale {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  top: 60px;
+}
+
+.payment__banner-link {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  bottom: 51px;
+  padding: 19px 46px;
+  white-space: nowrap;
+}
+
+.payment__row {
+  max-width: 100%;
+  width: 873px;
+  justify-content: space-between;
+}
+
+.payment__row:first-child {
+  margin-bottom: 133px;
+}
+
+.payment__row-caption {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.payment__row-text {
+  max-width: 570px;
+  width: 100%;
+}
+
+.payment__row-header {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.payment__text {
+  padding-top: 86px;
+}
+
+.payment__row-cards {
+  margin-top: 26px;
+}
+
+.payment__row-cards-header {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.payment__row-cards-list {
+  align-items: center;
+  margin-top: 7px;
+}
+
+.payment__row-cards-item {
+  margin-right: 14px;
+}
+
 /*потом удалить*/
 
 body {
@@ -2379,6 +2485,14 @@ body {
 
   .cat2__filter .color-checkbox__container {
     margin-bottom: 25px;
+  }
+
+  .payment__row:first-child {
+    margin-bottom: 104px;
+  }
+
+  .payment__container {
+    padding-bottom: 47px;
   }
 }
 
@@ -2748,10 +2862,6 @@ body {
     left: 39px;
   }
 
-  .subcat-banner {
-    margin-bottom: 50px;
-  }
-
   .subcat-banner__container {
     padding-top: 173px;
     padding-bottom: 46px;
@@ -2779,6 +2889,38 @@ body {
   .cat2-goods .pagination {
     margin-bottom: 29px;
     padding-top: 44px;
+  }
+
+  .payment__container {
+    padding-top: 46px;
+    padding-bottom: 37px;
+  }
+
+  .payment__text {
+    padding-top: 34px;
+  }
+
+  .payment__row {
+    flex-direction: column;
+  }
+
+  .payment__row-header {
+    margin-bottom: 7px;
+  }
+
+  .payment__row:first-child {
+    margin-bottom: 61px;
+  }
+
+  .payment__row {
+    max-width: 575px;
+    width: 100%;
+  }
+
+  .payment__banner {
+    margin-top: 14px;
+    min-width: 320px;
+    margin-left: 20px;
   }
 }
 
@@ -3271,6 +3413,34 @@ body {
   }
 }
 
+@media (max-width: 670px) {
+  .payment__banner {
+    margin: 0 auto;
+  }
+
+  .payment__content {
+    flex-direction: column;
+  }
+
+  .payment__row-header {
+    font-size: 18px;
+  }
+
+  .payment__container {
+    padding-top: 32px;
+    padding-bottom: 56px;
+  }
+
+  .payment__text {
+    padding-top: 26px;
+    margin-bottom: 38px;
+  }
+
+  .payment__row:first-child {
+    margin-bottom: 44px;
+  }
+}
+
 @media (max-width: 660px) {
   .main-banner__container {
     padding-top: 63px;
@@ -3377,6 +3547,18 @@ body {
   .container {
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+
+@media (max-width: 340px) {
+  .payment__content {
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .payment__banner {
+    margin: 0 -10px;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
