@@ -2396,6 +2396,8 @@ function showTabs() {
             sidebar.updateSticky();
           }
         } else {
+          alert('dfd');
+
           if (tabsItem[i].classList.contains('active')) {
             tabsItem[i].classList.remove('active');
           } else {
