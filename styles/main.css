@@ -1984,7 +1984,7 @@ body.lb-disable-scrolling {
   margin-bottom: 68px;
 }
 
-.filter .popup__close,
+.filter__wrapper .popup__close,
 .filter__current,
 .filter__result {
   display: none;
