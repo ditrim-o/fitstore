@@ -4939,6 +4939,10 @@ body {
     border-top: none;
   }
 
+  .header__menu-item_with-child:hover .dropdown__container {
+    border-top: transparent;
+  }
+
   .header {
     position: relative;
   }
