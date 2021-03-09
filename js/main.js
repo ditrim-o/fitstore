@@ -2421,10 +2421,23 @@ function showTabs() {
 
     tabsItem.forEach(function (item, i) {
       item.addEventListener('click', function (e) {
-        if (e.target.closest('.card__tabs-item') && item.classList.contains('active')) {
-          item.classList.remove('active');
-        } else {
+        if (document.documentElement.clientWidth > 1280) {
+          tabsItem.forEach(function (text) {
+            text.classList.remove('active');
+          });
           item.classList.add('active');
+          var heightText = tabsText[i].offsetHeight;
+          tabsList.style.height = heightText + heightList + "px";
+
+          if (cloth) {
+            sidebar.updateSticky();
+          }
+        } else {
+          if (e.target.closest('.card__tabs-item') && item.classList.contains('active')) {
+            item.classList.remove('active');
+          } else {
+            item.classList.add('active');
+          }
         } // if (document.documentElement.clientWidth > 1280){
         //     tabsItem.forEach(text =>{
         //         text.classList.remove('active');
