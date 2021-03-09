@@ -2035,6 +2035,7 @@ body.lb-disable-scrolling {
   bottom: 35px;
   right: 58px;
   padding: 19px 46px;
+  white-space: nowrap;
 }
 
 .bottom-offers__img {
