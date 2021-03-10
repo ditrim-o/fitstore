@@ -2784,7 +2784,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.onresize = function () {
   //showTabs();
-  Sliders(); //cartOrderStick();
+  Sliders();
+  cartOrderStick();
+  alert('aaaaa');
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
