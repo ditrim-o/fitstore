@@ -1494,6 +1494,10 @@ body.lb-disable-scrolling {
   white-space: nowrap;
 }
 
+.main-goods {
+  background-color: #f8f8f8;
+}
+
 .brands {
   padding-top: 134px;
   padding-bottom: 50px;
