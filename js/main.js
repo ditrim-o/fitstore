@@ -2828,7 +2828,7 @@ function headerScroll() {
   document.addEventListener('scroll', function () {
     var top = window.pageYOffset;
 
-    if (lastScrollTop > top) {
+    if (lastScrollTop > top && window.pageYOffset > 0) {
       body.classList.add('menuscroll');
       header.classList.add('menuscroll');
     } else {
