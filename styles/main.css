@@ -244,7 +244,7 @@ input:focus:-ms-input-placeholder {
 }
 
 .show {
-  display: block !important;
+  display: flex !important;
 }
 
 .hide {
@@ -1434,6 +1434,9 @@ body.lb-disable-scrolling {
   width: 40px;
   font-size: 16px;
   font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .cat1-goods__count {
