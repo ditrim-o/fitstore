@@ -2478,32 +2478,6 @@ function Sliders() {
     });
   }
 }
-/*cart-order*/
-// function cartOrderStick() {
-//     var cartBtn = document.querySelector('.card__order');
-//     var cat = document.querySelector('.card__category');
-//     if (cartBtn && document.documentElement.clientWidth < 769) {
-//         var heightBtn = cartBtn.offsetHeight;
-//         var catMarg = parseInt(getComputedStyle(cat).marginBottom, 10);
-//         var end = cartBtn.getBoundingClientRect().top + heightBtn + window.pageYOffset; // координаты низа кнопки относительно документа
-//         var left = cartBtn.getBoundingClientRect().left;
-//         window.addEventListener('scroll', function () {
-//             if (window.pageYOffset > end) {
-//                 cartBtn.style.paddingLeft = left + "px";
-//                 cartBtn.classList.add("fixed");
-//                 cartBtn.style.height = '65px';
-//                 cat.style.marginBottom = catMarg + heightBtn + 'px';
-//             }
-//             else {
-//                 cartBtn.classList.remove("fixed");
-//                 cartBtn.style.height = 'auto';
-//                 cartBtn.style.paddingLeft = "0px";
-//                 cat.style.marginBottom = catMarg + 'px';
-//             }
-//         });
-//     }
-// }
-
 
 function cartOrderStick() {
   var cartBtn = document.querySelector('.card__order');

@@ -369,6 +369,12 @@ textarea {
   width: 100%;
 }
 
+.cart-ml-icon {
+  fill: white;
+  height: 14px;
+  width: 14px;
+}
+
 .bg_blue {
   background-color: #21303d;
 }
@@ -433,6 +439,9 @@ textarea {
   width: 40px;
   font-size: 16px;
   font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .cart-count {
@@ -3323,7 +3332,7 @@ body.lb-disable-scrolling {
 }
 
 .card .cat1-goods__quantity {
-  display: inline-block;
+  display: flex;
 }
 
 .card .cat1-goods__cart {
